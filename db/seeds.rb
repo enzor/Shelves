@@ -1,5 +1,3 @@
-require 'faker'
-
 # Book Categories
 
 categories = ["General","Adventure","Horror","Humor","Literature","Mystery",

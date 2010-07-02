@@ -9,3 +9,23 @@ Shelves comes also with a ferret booksearch engine , and with an achievement sys
 
 Soon there will be a copy online!
 
+== Quick Setup == 
+
+1: rename config/database.example.yml do config/database.yml , and change it as you like
+2: run rake gems:install db:migrate db:seed
+3: script/server
+4: point your browser to http://localhost:3000/
+5: enjoy!!
+
+=== Versions and Notes ===
+
+0.1.0
+
+First version.
+It was a great and refreshing challenge, i enjoyed writing this app.
+
+NOTE:
+The app was tested against a SQLITE database, if you want to use with mysql, please change the :order => 'random()' to :order => 'RAND()' in the following files
+	-app/models/user.rb
+	-app/models/book.rb
+	-db/seeds.rb
