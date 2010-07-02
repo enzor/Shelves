@@ -11,7 +11,7 @@ Soon there will be a copy online!
 
 == Quick Setup == 
 
-1: rename config/database.example.yml do config/database.yml , and change it as you like
+1: rename config/database.example.yml to config/database.yml , and change it as you like
 2: run rake gems:install db:migrate db:seed
 3: script/server
 4: point your browser to http://localhost:3000/
