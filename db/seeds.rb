@@ -14,8 +14,8 @@ end
 #Admin User
 User.create!(:username => "admin", 
              :email => "enzor@sefitalia.com", 
-             :password => "achaiah99t", 
-             :password_confirmation => "achaiah99t", 
+             :password => "pippospazio", 
+             :password_confirmation => "pippospazio", 
              :roles_mask => 1,
              :categories => Category.all(:order => "random()",:limit => 3)
              )
