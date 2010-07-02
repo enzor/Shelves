@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  username: JRRTolkien
+  email: jrrtolkien@middleearth.com
+  password: ubergandalf
+  password_confirmation: ubergandalf
+
+two:
+  username: Dan Brown
+  email: danbrown@holygrail.com
+  password: womanlygrail
+  password_confirmation: womanlygrail

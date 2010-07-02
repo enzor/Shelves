@@ -1,0 +1,15 @@
+<% form_for UserSession.new do |f| %>
+<h2>Login</h2>
+  <p>
+    <b> <%= f.label :username %> </b>
+    <%= f.text_field :username %>
+  </p>
+  <p>
+   <b> <%= f.label :password %></b>
+    <%= f.password_field :password %>
+  </p>
+  <p>
+	<%= f.submit "Login", :class => 'button', :style => "float:right" %>
+	<%= link_to 'Register', new_user_path , :class => 'button', :style => "float:right;color:white"%>
+	</p>
+<% end %>

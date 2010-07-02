@@ -1,0 +1,14 @@
+<div class="presentation">
+	<h2>Welcome!</h2>
+	Quam aut sunt aperiam ipsa alias culpa libero inventore. Explicabo voluptate inventore esse. Non fugiat dolorem porro et autem ducimus fugit consequatur. - Eaque minima esse dolorum error ullam molestiae molestiae. Corporis incidunt repellendus ut voluptas et nulla. Debitis possimus quia sapiente quo esse. Porro nisi inventore nesciunt ab ea. - Omnis laudantium doloremque rem placeat voluptatibus. Quo eum odit fugit necessitatibus repudiandae veritatis dignissimos aut. Et beatae fugit adipisci.
+</div>
+<% if @books.length > 0%>
+	<%= render :partial => 'booklist', :locals => { :books => @books} %>
+
+	<div align="right">
+		<%= will_paginate @books %>
+	</div>
+<% else %>
+ <h1>Actually there are no books published!</h1>
+<% end %>
+<br />

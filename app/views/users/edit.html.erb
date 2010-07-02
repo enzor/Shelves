@@ -1,0 +1,52 @@
+
+<div id="user_form">
+	<h1>Edit Profile</h1>
+	<% form_for @user, :html => {:multipart => true} do |f| %>
+	  <%= f.error_messages %>
+	  <p style="float:right">
+		<b><%= f.label "Current Image"%></b><br />
+		<%= image_tag @user.avatar.url(:medium) %><br />
+		<b><%= f.label "Upload an avatar" %></b><br />
+		<%= f.file_field :avatar %><br />
+	  </p>
+	<div style="width:400px" style="padding-top:10px">
+	  <p>
+	   <b> <%= f.label :username, "Username: " %></b>
+	    <%= f.text_field :username, :class => 'textfield', :style => "float:right" %>
+	  </p>
+	  <p>
+	    <b><%= f.label :email , "Email Address: "%></b>
+	    <%= f.text_field :email, :class => 'textfield', :style => "float:right" %>
+	  </p>
+	  <p>
+	    <b><%= f.label :password, "Password: " %></b>
+	    <%= f.password_field :password, :class => 'textfield', :style => "float:right"%>
+	  </p>
+	  <p>
+	    <b><%= f.label :password_confirmation, "Confirm Password: " %></b>
+	    <%= f.password_field :password_confirmation, :class => 'textfield', :style => "float:right" %>
+	  </p>
+	</div>
+
+	  <p>
+	   <b> <%= f.label :roles %></b><br />
+	    <% for role in User::ROLES %>
+	      <%= radio_button_tag "user[roles][]", role, @user.roles.include?(role) , :class => 'radio'%>
+	      <%=h role.humanize %><br />
+	    <% end %>
+	    <%= hidden_field_tag "user[roles][]", "" %>
+	  </p>
+	<div align="center">
+		<p>
+			<h3><%= @user.username + "'s preferences"%></h3>
+			<%= render :partial => 'shared/categories', :locals => {:object => @user, :name => 'user'}%>
+		</p>
+	  <p>
+	    <%= f.submit 'Update', :class => 'button'%>
+	  </p>
+	</div>
+	<% end %>
+</div>
+
+<%= link_to 'Your Page', @user %> |
+<%= link_to 'Back', root_url %>

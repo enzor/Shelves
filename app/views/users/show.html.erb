@@ -1,0 +1,47 @@
+<div id="user_form" style="height:600px">
+	<% title @user.username + "'s page"%>
+		<h2><%= @user.username %></h2>
+
+	<div class="activities" style="width:300px">
+		<%= image_tag @user.avatar.url(:medium) %>
+		
+		<% if current_user %>
+		 	<% if @user.role?(:author)%>
+			<h4>Currently <%= @user.username %> have <i><%= @user.reverse_friends.size %> </i>fans!!</h4>
+				<% if current_user.friends.include?(@user)%>
+					<%= link_to "Unfan", current_user.friendship(@user), :method => :delete %> <br />
+				<% else %>
+					<%= link_to "Become a fan", friendships_path(:friend_id => @user), :method => :post %> <br />
+				<% end %>
+			<% end %><br />
+			<%= link_to "Send a Private Message",new_user_message_path(current_user,:reply_to_user => @user.username )%>		
+		<% end %>
+		<% if @user.role?(:author) or @user.role?(:admin)%>
+			<ul style="padding:20px">
+				<h3>Book Published</h3>
+				<% @user.books.each do |b| %>
+					<li><%= link_to h(b.name), book_path(b) %></li>
+				<% end %>
+			</ul>
+		<% end %>
+	</div>
+		
+		
+	<div class="achievements">
+		<h2>Achievements Earned</h2>
+		<%= render "shared/achievements", :user => @user %>
+		
+	</div>
+
+
+	
+</div>
+
+<div align="center">
+	<% if current_user %>
+		<% if can? :update, @user %>
+			<%= link_to 'Edit', edit_user_path(@user) %> |
+		<% end %>
+		<%= link_to 'Back', :back %> 
+	<% end %>
+</div>

@@ -1,0 +1,41 @@
+<div id="user_form" style="text-align:center">
+	<h1>New user</h1>
+
+	<% form_for @user , :html => {:multipart => true} do |f| %>
+	  <%= f.error_messages %>
+
+	  <p>
+	    <%= f.label :username %><br />
+	    <%= f.text_field :username %>
+	  </p>
+	  <p>
+	    <%= f.label :email %><br />
+	    <%= f.text_field :email %>
+	  </p>
+	  <p>
+	    <%= f.label :password %><br />
+	    <%= f.password_field :password %>
+	  </p>
+	  <p>
+	    <%= f.label :password_confirmation %><br />
+	    <%= f.password_field :password_confirmation %>
+	  </p>
+	  <p>
+		<%= f.label "Upload an Avatar"%> <br />
+	   	<%= f.file_field :avatar %>
+	  </p>
+	  <p>
+	    <%= f.label :roles, "Subscribe as:" %><br />
+	    <% for role in User::ROLES %>
+	      <%= radio_button_tag "user[roles][]", role, @user.roles.include?(role) %>
+	      <%=h role.humanize %><br />
+	    <% end %>
+	    <%= hidden_field_tag "user[roles][]", "" %>
+	  </p>
+	  <p>
+	    <%= f.submit 'Create', :class => 'button' %>
+	  </p>
+	<% end %>
+
+</div>
+

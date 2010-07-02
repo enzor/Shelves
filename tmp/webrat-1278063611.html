@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Mona Lisa Giveaway</title>
+	<script src="/javascripts/jquery.js?1277883760" type="text/javascript"></script>
+<script src="/javascripts/jquery-ui.js?1277883760" type="text/javascript"></script>
+<script src="/javascripts/jrails.js?1277883760" type="text/javascript"></script>
+<script src="/javascripts/application.js?1277969530" type="text/javascript"></script>
+    <link href="/stylesheets/application.css?1278062137" media="screen" rel="stylesheet" type="text/css" />
+    
+  </head>
+  <body>
+	<!-- BEGIN wrapper -->
+	<div id="wrapper">
+	  <!-- BEGIN header -->
+	  <div id="header">
+	    <!-- begin logo -->
+	    <h1><a href="http://www.example.com/">Shelves</a></h1>
+	    <!-- end logo -->
+	    <!-- begin advertisement -->
+	    <div class="ad"><a href="http://www.rublings.com/"><img src="/images/commons/ad468x60.gif" alt="" /></a></div>
+	    <!-- end advertisement -->
+	    <!-- begin navigation -->
+		<ul>
+			
+			  <div style="float:left">
+				<li><a href="http://www.example.com/">Welcome Back gigidag</a></li>
+			  </div>
+			
+		  <div style="float:right">
+			<li><a href="http://www.example.com/">Index</a> </li>
+			
+			   
+				<li><a href="/users/1/messages">Inbox (1)</a></li>
+				<li><a href="/users/current/edit">Edit Profile</a></li>
+				<li><a href="/user_logout">Logout</a></li>
+			
+		  </div>
+		</ul>
+	    <!-- end navigation -->
+	  </div>
+        <div id="flash_notice">Comment was successfully updated.</div>
+	  <!-- END header -->
+	  <!-- BEGIN content -->
+	  <div id="content">
+			
+<div id="user_form">
+<p>
+	<b>Cover:</b><br />
+	<img alt="Defcover_small" src="/images/commons/defcover_small.png?1277898623" />
+</p>
+<p>
+  <b>Author:</b>
+  <a href="/users/1">gigidag</a>
+</p>
+
+<p>
+  <b>Name:</b>
+  Mona Lisa Giveaway
+</p>
+
+<p>
+  <b>Description:</b>
+  Leonardo Goes Wild!He want to sell copies of mona liiiiiiisaaaaa! Someone stop him! NOW!
+</p>
+<p>
+	<b>Rate It!</b>
+	<div id="star-ratings-block">
+	    0.0/5 Stars<br>
+<ul class='star-rating'>
+    <li class='current-rating' style='width:0px;'>
+          Currently 0.0/5 Stars.
+        </li>
+    <li>
+        <a class="one-star" href="#" name="1 star out of 5" onclick="jQuery.ajax({data:'', dataType:'script', type:'post', url:'/ratings/rate/1?rating=1'}); return false;">1</a>
+    </li>
+    <li>
+        <a class="two-stars" href="#" name="2 stars out of 5" onclick="jQuery.ajax({data:'', dataType:'script', type:'post', url:'/ratings/rate/1?rating=2'}); return false;">2</a>    
+    </li>
+    <li>
+        <a class="three-stars" href="#" name="3 stars out of 5" onclick="jQuery.ajax({data:'', dataType:'script', type:'post', url:'/ratings/rate/1?rating=3'}); return false;">3</a>
+    </li>
+    <li>
+        <a class="four-stars" href="#" name="4 stars out of 5" onclick="jQuery.ajax({data:'', dataType:'script', type:'post', url:'/ratings/rate/1?rating=4'}); return false;">4</a>    
+    </li>
+    <li>
+        <a class="five-stars" href="#" name="5 stars out of 5" onclick="jQuery.ajax({data:'', dataType:'script', type:'post', url:'/ratings/rate/1?rating=5'}); return false;">5</a>
+    </li>
+</ul>
+	</div>
+</p>
+<div align="center">
+	
+	
+		<a href="/books">Back</a>
+</div>
+</div>
+
+<div id="past_comments">
+	
+	
+	  <h2>1 comment</h2>
+
+	  <div id="comments">
+	  
+	    <div class="comment">
+	      <em>gigidag on Jul 02, 2010 at 09:40</em>
+	      <p>Ahahahahahahaha</p>
+	      <p>
+	        
+	          <a href="/comments/1/edit">Edit Comment</a>
+	        
+	        
+	      </p>
+	    </div>
+	  
+	  </div>
+	
+</div>
+
+	<div id="comment_form">
+	<h3>Add your comment:</h3>
+	<form action="/comments" class="new_comment" id="new_comment" method="post">
+	  
+	  <input id="comment_book_id" name="comment[book_id]" type="hidden" value="1" />
+	  <input id="comment_user_id" name="comment[user_id]" type="hidden" value="1" />
+	  <p>
+	    <b><label for="comment_author">Author Name</label></b><br />
+	    <input id="comment_author" name="comment[author]" size="30" type="text" value="gigidag" />
+	  </p>
+	  <p>
+	    <b><label for="comment_body">Description:</label></b><br />
+	    <textarea cols="40" id="comment_body" name="comment[body]" rows="10"></textarea>
+	  </p>
+	  <p>
+	    <input class="button" id="comment_submit" name="commit" type="submit" value="Create" />
+	  </p>
+	</form>
+</div>
+
+	  </div>
+	  <!-- END content -->
+	  <!-- BEGIN sidebar -->
+	  <div id="sidebar">
+	    <!-- begin search -->
+	    <div id="search" class="search box">
+	      <form action="/books/search" method="post">
+			<input id="query" name="query" type="text" />
+			<button type="submit" style="cursor:pointer">Search</button>
+		  </form>
+	    </div>
+	    <!-- end search -->
+	    <!-- begin advertisement -->
+	    <div class="register">
+		
+			<div id="mini_user">
+	<h2>gigidag mini profile</h2>
+	<div class="activities">
+		<h3>Activity</h3>
+		<a href="/users/1">My Page</a><br />
+		<a href="/books/1">My Achievements</a><br />
+		<a href="/books/1">Achievement Tree</a><br />
+	</div>
+		
+		<a href="/users/1"><img alt="Defavatar" src="/images/commons/defavatar.png?1277894663" /></a>
+
+</div>
+		
+	    </div>
+	    <!-- end advertisement -->
+	    <!-- begin popular posts -->
+	    <div class="box">
+	      <h2>Latest Books</h2>
+	      <ul>
+		
+			
+				<li><a href="/books/1">Mona Lisa Giveaway</a></li>
+			
+		
+	      </ul>
+	    </div>
+	    <!-- end popular posts -->
+	    <!-- begin flickr photos -->
+	    <div class="box">
+	      <h2>Random Users</h2>
+	      <p class="flickr"> 
+			
+				<a href="/users/1" title="gigidag"><img alt="Defavatar" src="/images/commons/defavatar.png?1277894663" /></a>
+			
+		  </p>
+	    </div>
+	    <!-- end flickr photos -->
+	    <!-- begin featured video -->
+	    <div class="box">
+	      <h2>Featured Book</h2>
+	      <div class="featured" align="center">
+		
+			
+	      	<a href="/books/1"><img alt="Defcover_small" src="/images/commons/defcover_small.png?1277898623" /></a>
+		
+	      </div>
+	    </div>
+	    <!-- end featured video -->
+	    <!-- BEGIN left -->
+
+	    <!-- END right -->
+	  </div>
+	  <!-- END sidebar -->
+	  <div class="break"></div>
+	  <!-- BEGIN footer -->
+	  <div id="footer">
+	    <p class="l"> Copyright by Rivello Vincenzo - &copy; 2010 - <a href="http://www.example.com/">Shelves</a> &middot; All Rights Reserved</p>
+	  </div>
+	  <!-- END footer -->
+	</div>
+  </body>
+</html>

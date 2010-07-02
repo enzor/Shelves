@@ -1,0 +1,20 @@
+
+<div id="past_comments">
+	<h1>Editing comment</h1>
+<% form_for(@comment) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <b><%= f.label :user_id , "Author"%></b><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <b><%= f.label :body, "Description:" %></b><br />
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit 'Update', :class => 'button' %>
+  </p>
+<% end %>
+</div>
+<%= link_to 'Back', book_path(@comment.book) %>

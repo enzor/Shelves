@@ -1,0 +1,17 @@
+<table class="books">
+
+<% books.each do |book| %>
+  <tr>
+	<td><%= link_to image_tag(book.cover_photo.url(:small)),book%></td>
+    <td><%= link_to h(book.name), book %></td>
+    <td><%=h book.description[0..75] + "..." %></td>
+    <td><%=link_to h(book.user.username), user_path(book.user) %></td>
+	<% if can? :update , book %>
+	    <td><%= link_to image_tag('icons/page_white_edit.png'), edit_book_path(book) %></td>
+	<% end %>
+	<% if can? :destroy, book %>
+	    <td><%= link_to image_tag('icons/page_white_delete.png'), book, :confirm => 'Are you sure?', :method => :delete %></td>
+	<% end %>
+  </tr>
+<% end %>
+</table>

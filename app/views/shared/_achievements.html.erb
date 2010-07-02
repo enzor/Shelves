@@ -1,0 +1,8 @@
+<% @achtypes = [Critic,Famous,Publisher] %>
+<ul>
+	<% @achtypes.each do |a| %>
+		<% if a.current_level(user) != 0 %>
+			<li><%= link_to user.current_name_role(a) , nil, :class => "#{a.to_s.downcase}"%></li>
+		<% end %>
+	<% end %>
+</ul>

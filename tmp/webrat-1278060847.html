@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>User Login</title>
+	<script src="/javascripts/jquery.js?1277883760" type="text/javascript"></script>
+<script src="/javascripts/jquery-ui.js?1277883760" type="text/javascript"></script>
+<script src="/javascripts/jrails.js?1277883760" type="text/javascript"></script>
+<script src="/javascripts/application.js?1277969530" type="text/javascript"></script>
+    <link href="/stylesheets/application.css?1278044727" media="screen" rel="stylesheet" type="text/css" />
+    
+  </head>
+  <body>
+	<!-- BEGIN wrapper -->
+	<div id="wrapper">
+	  <!-- BEGIN header -->
+	  <div id="header">
+	    <!-- begin logo -->
+	    <h1><a href="http://www.example.com/">Shelves</a></h1>
+	    <!-- end logo -->
+	    <!-- begin advertisement -->
+	    <div class="ad"><a href="http://www.rublings.com/"><img src="/images/commons/ad468x60.gif" alt="" /></a></div>
+	    <!-- end advertisement -->
+	    <!-- begin navigation -->
+		<ul>
+			
+		  <div style="float:right">
+			<li><a href="http://www.example.com/">Index</a> </li>
+			
+				<li><a href="/users/new">Register</a> </li>
+			
+		  </div>
+		</ul>
+	    <!-- end navigation -->
+	  </div>
+	  <!-- END header -->
+	  <!-- BEGIN content -->
+	  <div id="content">
+			
+
+<form action="/user_sessions" class="new_user_session" id="new_user_session" method="post">
+<h2>Login</h2>
+  <p>
+    <b> <label for="user_session_username">Username</label> </b>
+    <input id="user_session_username" name="user_session[username]" size="30" type="text" />
+  </p>
+  <p>
+   <b> <label for="user_session_password">Password</label></b>
+    <input id="user_session_password" name="user_session[password]" size="30" type="password" />
+  </p>
+  <p>
+	<input class="button" id="user_session_submit" name="commit" style="float:right" type="submit" value="Login" />
+	<a href="/users/new" class="button" style="float:right;color:white">Register</a>
+	</p>
+</form>
+
+
+
+
+	  </div>
+	  <!-- END content -->
+	  <!-- BEGIN sidebar -->
+	  <div id="sidebar">
+	    <!-- begin search -->
+	    <div id="search" class="search box">
+	      <form action="/user_sessions/search" method="post">
+			<input id="query" name="query" type="text" />
+			<button type="submit" style="cursor:pointer">Search</button>
+		  </form>
+	    </div>
+	    <!-- end search -->
+	    <!-- begin advertisement -->
+	    <div class="register">
+		
+			<form action="/user_sessions" class="new_user_session" id="new_user_session" method="post">
+<h2>Login</h2>
+  <p>
+    <b> <label for="user_session_username">Username</label> </b>
+    <input id="user_session_username" name="user_session[username]" size="30" type="text" />
+  </p>
+  <p>
+   <b> <label for="user_session_password">Password</label></b>
+    <input id="user_session_password" name="user_session[password]" size="30" type="password" />
+  </p>
+  <p>
+	<input class="button" id="user_session_submit" name="commit" style="float:right" type="submit" value="Login" />
+	<a href="/users/new" class="button" style="float:right;color:white">Register</a>
+	</p>
+</form>
+
+		
+	    </div>
+	    <!-- end advertisement -->
+	    <!-- begin popular posts -->
+	    <div class="box">
+	      <h2>Latest Books</h2>
+	      <ul>
+		
+			The shelves are empty! If you are an author, add a book!
+		
+	      </ul>
+	    </div>
+	    <!-- end popular posts -->
+	    <!-- begin flickr photos -->
+	    <div class="box">
+	      <h2>Random Users</h2>
+	      <p class="flickr"> 
+			
+				<a href="/users/1" title="gigidag"><img alt="Defavatar" src="/images/commons/defavatar.png?1277894663" /></a>
+			
+		  </p>
+	    </div>
+	    <!-- end flickr photos -->
+	    <!-- begin featured video -->
+	    <div class="box">
+	      <h2>Featured Book</h2>
+	      <div class="featured" align="center">
+		
+			The shelves are empty! If you are an author, add a book!
+		
+	      </div>
+	    </div>
+	    <!-- end featured video -->
+	    <!-- BEGIN left -->
+
+	    <!-- END right -->
+	  </div>
+	  <!-- END sidebar -->
+	  <div class="break"></div>
+	  <!-- BEGIN footer -->
+	  <div id="footer">
+	    <p class="l"> Copyright by Rivello Vincenzo - &copy; 2010 - <a href="http://www.example.com/">Shelves</a> &middot; All Rights Reserved</p>
+	  </div>
+	  <!-- END footer -->
+	</div>
+  </body>
+</html>

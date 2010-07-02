@@ -1,0 +1,14 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  username: sandun
+  email: sandun@darkside.net
+  password: gentooismylife
+  password_confirmation: gentooismylife
+  
+
+two:
+  username: ruwan
+  email: ruwan@darkside.net
+  password: ubuntuforever
+  password_confirmation: ubuntuforever

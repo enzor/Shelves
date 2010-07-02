@@ -1,0 +1,19 @@
+<div id="comment_form">
+	<h3>Add your comment:</h3>
+	<% form_for(@comment) do |f| %>
+	  <%= f.error_messages %>
+	  <%= f.hidden_field :book_id %>
+	  <%= f.hidden_field :user_id, :value => current_user.id if current_user %>
+	  <p>
+	    <b><%= f.label :author , "Author Name"%></b><br />
+	    <%= f.text_field :author, :value => current_user.username if current_user %>
+	  </p>
+	  <p>
+	    <b><%= f.label :body, "Description:" %></b><br />
+	    <%= f.text_area :body, :size => '40x10' %>
+	  </p>
+	  <p>
+	    <%= f.submit 'Create' , :class => 'button'%>
+	  </p>
+	<% end %>
+</div>

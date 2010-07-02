@@ -1,0 +1,65 @@
+<% title @book.name %>
+<div id="user_form">
+<p>
+	<b>Cover:</b><br />
+	<%= image_tag @book.cover_photo.url(:medium)%>
+</p>
+<p>
+  <b>Author:</b>
+  <%=link_to  h(@book.user.username) , user_path(@book.user) %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @book.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @book.description %>
+</p>
+<p>
+	<b>Rate It!</b>
+	<div id="star-ratings-block">
+	    <%= render :partial => "ratings/rate", :locals => { :book => @book } %>
+	</div>
+</p>
+<div align="center">
+	<% if can? :update , @book %>
+		<%= link_to 'Edit Book', edit_book_path(@book) %> |
+	<% end %>
+	<% if can? :destroy, @book %>
+		<%= link_to 'Delete Book',@book, :method => :delete , :confirm => 'Are you sure?'%> |
+	<% end %>
+		<%= link_to 'Back', books_path %>
+</div>
+</div>
+
+<div id="past_comments">
+	
+	<% unless @book.comments.empty? %>
+	  <h2><%= pluralize(@book.comments.size, 'comment') %></h2>
+
+	  <div id="comments">
+	  <% for comment in @book.comments %>
+	    <div class="comment">
+	      <em><%=h comment.author %> on <%= comment.created_at.strftime('%b %d, %Y at %H:%M') %></em>
+	      <%=simple_format comment.body %>
+	      <p>
+	        <% if can? :update, comment %>
+	          <%= link_to "Edit Comment", edit_comment_path(comment) %>
+	        <% end %>
+	        <% if can? :destroy, comment %>
+	          | <%= link_to "Delete Comment", comment, :method => :delete, :confirm => "Are you sure?" %>
+	        <% end %>
+	      </p>
+	    </div>
+	  <% end %>
+	  </div>
+	<% end %>
+</div>
+<% if current_user %>
+	<%= render "comments/form"%>
+<% else %>
+	<h2>Only <%= link_to "registered user", new_user_path %> can comment a book!
+<% end %>

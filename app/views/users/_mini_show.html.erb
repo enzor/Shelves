@@ -1,0 +1,12 @@
+<div id="mini_user">
+	<h2><%= current_user.username %> mini profile</h2>
+	<div class="activities">
+		<h3>Activity</h3>
+		<%= link_to "My Page", user_path(current_user) %><br />
+		<%= link_to "My Achievements",nil %><br />
+		<%= link_to "Achievement Tree", nil%><br />
+	</div>
+		
+		<%= link_to image_tag(current_user.avatar.url(:small)), user_path(current_user) %>
+
+</div>

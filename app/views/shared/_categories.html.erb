@@ -1,0 +1,27 @@
+<div id="empty_category_container" class="empty_container">
+	<% object.categories.each do |c|%>
+	<p>
+		<select name="<%= "#{name}[category_ids][]" %>">
+			<%= options_from_collection_for_select(Category.all(:order => 'name ASC'), "id","name",c.id)%>
+		</select>
+			<%= link_to "Remove",nil, :onclick => "$(this).parent().fadeOut('slow', function() { $(this).remove()});return false;", :class => 'button'%>
+	<% end %>
+	</p>
+	<p>
+	</p>
+</div>
+
+
+<div id="category_container" class="container_box" style="display:none">
+ <p>
+
+	<select name="<%= "#{name}[category_ids][]" %>">
+		<%= options_from_collection_for_select(Category.all(:order => 'name ASC'), "id","name")%>
+	</select>
+		<%= link_to "Remove",nil, :onclick => "$(this).parent().fadeOut('slow', function() { $(this).remove()});return false;", :class => 'button'%>
+ </p>
+</div>
+
+<p>
+	<%= link_to "Add Category",nil, :class => 'button', :onclick => "addEmptyCategory();return false"%>
+</p>
