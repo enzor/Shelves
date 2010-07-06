@@ -54,7 +54,7 @@
 	  <div id="sidebar">
 	    <!-- begin search -->
 	    <div id="search" class="search box">
-	      <%= form_tag :action => 'search' %>
+	      <%= form_tag :controller => 'books', :actions => 'search' %>
 			<%= text_field_tag :query %>
 			<button type="submit" style="cursor:pointer">Search</button>
 		  </form>
