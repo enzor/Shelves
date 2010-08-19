@@ -13,6 +13,10 @@ Rails::Initializer.run do |config|
   config.gem 'cancan'
   config.gem 'ferret'
   config.gem 'jkraemer-acts_as_ferret', :version => '~> 0.4.4', :lib => 'acts_as_ferret', :source => 'http://gems.github.com'
+  
+  
+  
+  
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
